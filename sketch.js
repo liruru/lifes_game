@@ -67,7 +67,12 @@ let w = 15;
 let g = new Gen();
 
 function setup() {
-  createCanvas(480, 480);
+  if(windowWidth < windowHeight) {
+    createCanvas(windowWidth, windowWidth);
+  }
+  else {
+    createCanvas(windowHeight, windowHeight);
+  }
   frameRate(8);
   drawAll();
 }
